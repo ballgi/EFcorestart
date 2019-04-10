@@ -35,8 +35,10 @@ namespace EFGetStarted.AspNetCore.ExistingDb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            //appsettings 放多個connectionstrings
             //services.AddDbContext<BloggingContext>(options =>
-            //   options.UseSqlServer(Configuration.GetConnectionString("DbConnictionStr2")));
+            //   options.UseSqlServer(Configuration.GetConnectionString("DbConnictionStr")));
             services.AddDbContext<BloggingContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
         }
